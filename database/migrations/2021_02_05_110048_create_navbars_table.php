@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAboutsTable extends Migration
+class CreateNavbarsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateAboutsTable extends Migration
      */
     public function up()
     {
-        Schema::create('abouts', function (Blueprint $table) {
+        Schema::create('navbars', function (Blueprint $table) {
             $table->id();
-            $table->string('topTitle');
-            $table->string('downTitle');
-            $table->text('firstText');
-            $table->string('li1');
-            $table->string('li2');
-            $table->string('li3');
-            $table->text('secondText');
+            $table->string('resi', 10);
+            $table->string('home', 10);
+            $table->string('article', 10);
+            $table->string('contact', 10);
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateAboutsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('abouts');
+        Schema::dropIfExists('navbars');
     }
 }

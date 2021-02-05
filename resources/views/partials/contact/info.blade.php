@@ -2,10 +2,10 @@
     <div class="container">
 
         <div class="section-title">
-            <h2>Contact</h2>
-            <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-                consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
-                sit in iste officiis commodi quidem hic quas.</p>
+            @foreach ($contact as $item)
+                <h2>{{$item->titre}}</h2>
+                <p>{{$item->sousTitre}}</p>
+            @endforeach
         </div>
 
         <div class="row">
@@ -16,23 +16,29 @@
                     
                     <div class="col-md-12">
                         <div class="info-box">
-                            <i class="bx bx-map"></i>
-                            <h3>Our Address</h3>
-                            <p>A108 Adam Street, New York, NY 535022</p>
+                            @foreach ($contact as $item)
+                                <i class="{{$item->logoAddress}}"></i>
+                                <h3>{{$item->titreAddress}}</h3>
+                                <p>{{$item->contentAddress}}</p>
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="info-box mt-4">
-                            <i class="bx bx-envelope"></i>
-                            <h3>Email Us</h3>
-                            <p>info@example.com<br>contact@example.com</p>
+                            @foreach ($contact as $item)
+                                <i class="{{$item->logoEmail}}"></i>
+                                <h3>{{$item->titreEmail}}</h3>
+                                <p>{{$item->contentEmail1}}<br>{{$item->contentEmail2}}</p>
+                            @endforeach
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="info-box mt-4">
-                            <i class="bx bx-phone-call"></i>
-                            <h3>Call Us</h3>
-                            <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                            @foreach ($contact as $item)
+                                <i class="{{$item->logoCall}}"></i>
+                                <h3>{{$item->titreCall}}</h3>
+                                <p>{{$item->contentCall1}}<br>{{$item->contentCall2}}</p>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -68,7 +74,9 @@
                         <div class="error-message"></div>
                         <div class="sent-message">Your message has been sent. Thank you!</div>
                     </div>
-                    <div class="text-center"><button type="submit">Send Message</button></div>
+                    @foreach ($contact as $item)
+                        <div class="text-center"><button type="submit">{{$item->boutton}}</button></div>   
+                    @endforeach
                 </form>
             </div>
 

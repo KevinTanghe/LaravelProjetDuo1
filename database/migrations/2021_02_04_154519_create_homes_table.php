@@ -18,6 +18,7 @@ class CreateHomesTable extends Migration
             $table->string('titre', 100);
             $table->string('boutton1', 100);
             $table->string('boutton2', 100);
+            $table->string('img');
             $table->timestamps();
         });
     }

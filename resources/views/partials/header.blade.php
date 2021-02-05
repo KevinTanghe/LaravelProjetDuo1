@@ -1,16 +1,15 @@
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
-
-        <h1 class="logo"><a href="index.html">Resi.</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-
+        @foreach ($nav as $item)
+            <h1 class="logo"><a href="/">{{$item->resi}}</a></h1>
+        @endforeach
         <nav class="nav-menu d-none d-lg-block">
             <ul>
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="/article">Article</a></li>
-                <li><a href="/contact">Contact</a></li>
-
+                @foreach ($nav as $item)
+                    <li class="active"><a href="/">{{$item->home}}</a></li>
+                    <li><a href="/article">{{$item->article}}</a></li>
+                    <li><a href="/contact">{{$item->contact}}</a></li>
+                @endforeach
             </ul>
         </nav><!-- .nav-menu -->
     </div>
