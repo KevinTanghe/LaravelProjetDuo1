@@ -13,6 +13,7 @@
             <div class="col-lg-6">
 
                 <div class="row">
+                    
                     <div class="col-md-12">
                         <div class="info-box">
                             <i class="bx bx-map"></i>

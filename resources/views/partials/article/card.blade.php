@@ -2,7 +2,6 @@
     <div class="container">
 
         <div class="row">
-
             <div class="col-lg-4">
                 <div class="titreCard">
                     <h1>test</h1>
@@ -82,3 +81,9 @@
 
     </div>
 </section><!-- End Why Us Section -->
+
+
+@foreach ($article as $item)
+    <h1>{{$item->nom}}</h1>
+    <p>{{$item->}}</p>
+@endforeach
