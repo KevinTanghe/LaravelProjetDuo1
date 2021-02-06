@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\BackController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -19,3 +20,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/article', [ArticleController::class, 'index']);
 Route::get('/contact', [ContactController::class, 'index']);
+Route::get('/back', [BackController::class, 'index']);
+
+Route::get('/back/reseau', [BackController::class, 'reseau']);
+Route::post('/back-Store-reseau', [BackController::class, 'storeReseau']);
+
+Route::get('/back/lihome', [BackController::class, 'liHome']);
+Route::post('/back-Store-lihome', [BackController::class, 'storeHome']);
+
+Route::get('/back/liabout', [BackController::class, 'liAbout']);
+Route::post('/back-Store-liabout', [BackController::class, 'storeAbout']);
+
+Route::get('/back/cardarticle', [BackController::class, 'cardArticle']);
+Route::post('/back-Store-card', [BackController::class, 'storeCard']);

@@ -16,13 +16,8 @@
         </div>
         <div class="social-links text-center text-md-right pt-3 pt-md-0">
             @foreach ($reseaux as $item)
-                
+                <a href="#"><i class="{{$item->Reseaux}}"></i></a>
             @endforeach
-            <a href="#"><i class="{{$item->twitter}}"></i></a>
-            <a href="#"><i class="{{$item->facebook}}"></i></a>
-            <a href="#"><i class="{{$item->instagram}}"></i></a>
-            <a href="#"><i class="{{$item->google}}"></i></a>
-            <a href="#"><i class="{{$item->linkedin}}"></i></a>
         </div>
     </div>
 </footer><!-- End Footer -->

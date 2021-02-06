@@ -9,6 +9,7 @@
                     <li class="active"><a href="/">{{$item->home}}</a></li>
                     <li><a href="/article">{{$item->article}}</a></li>
                     <li><a href="/contact">{{$item->contact}}</a></li>
+                    <li><a href="/back">{{$item->backoffice}}</a></li>
                 @endforeach
             </ul>
         </nav><!-- .nav-menu -->

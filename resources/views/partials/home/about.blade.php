@@ -13,10 +13,8 @@
                     <p>{{$item->firstText}}</p>
                 @endforeach
                 <ul>
-                    @foreach ($about as $item)
-                        <li><i class="ri-check-double-line"></i> {{$item->li1}}</li>
-                        <li><i class="ri-check-double-line"></i> {{$item->li2}}</li>
-                        <li><i class="ri-check-double-line"></i> {{$item->li3}}</li>
+                    @foreach ($secondAbout as $item)
+                        <li><i class="ri-check-double-line"></i> {{$item->liAbout}}</li>
                     @endforeach
                 </ul>
                 @foreach ($about as $item)
