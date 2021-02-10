@@ -11,6 +11,7 @@
                 <th scope="col">Content</th>
                 <th scope="col">Create_at</th>
                 <th scope="col">Update_at</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +24,12 @@
                     <td>{{ $item->content }}</td>
                     <td>{{ $item->created_at }}</td>
                     <td>{{ $item->updated_at }}</td>
+                    <td>
+                        <form action="/delete-card/{{$item->id}}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-danger">DELETE</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

@@ -29,6 +29,12 @@ class BackController extends Controller
         return redirect()->back();
     }
 
+    public function destroyReseau($id) {
+        $destroy = liensFooter::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+
     public function liHome() {
 
         $secondHome = SecondHome::all();
@@ -40,6 +46,12 @@ class BackController extends Controller
         $store = new SecondHome;
         $store->titre = $request->titre;
         $store->save();
+        return redirect()->back();
+    }
+
+    public function destroyHome($id) {
+        $destroy = SecondHome::find($id);
+        $destroy->delete();
         return redirect()->back();
     }
 
@@ -58,6 +70,12 @@ class BackController extends Controller
         return redirect()->back();
     }
 
+    public function destroyAbout($id) {
+        $destroy = SecondAbout::find($id);
+        $destroy->delete();
+        return redirect()->back();
+    }
+
     public function cardArticle() {
         
         $card = Article::all();
@@ -72,6 +90,12 @@ class BackController extends Controller
         $store->sousTitre = $request->sousTitre;
         $store->content = $request->content;
         $store->save();
+        return redirect()->back();
+    }
+
+    public function destroyCard($id) {
+        $destroy = Article::find($id);
+        $destroy->delete();
         return redirect()->back();
     }
 }

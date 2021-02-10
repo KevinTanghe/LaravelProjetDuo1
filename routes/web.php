@@ -24,12 +24,16 @@ Route::get('/back', [BackController::class, 'index']);
 
 Route::get('/back/reseau', [BackController::class, 'reseau']);
 Route::post('/back-Store-reseau', [BackController::class, 'storeReseau']);
+Route::post('/delete-reseau/{id}', [BackController::class, 'destroyReseau']);
 
 Route::get('/back/lihome', [BackController::class, 'liHome']);
 Route::post('/back-Store-lihome', [BackController::class, 'storeHome']);
+Route::post('/delete-lihome/{id}', [BackController::class, 'destroyHome']);
 
 Route::get('/back/liabout', [BackController::class, 'liAbout']);
 Route::post('/back-Store-liabout', [BackController::class, 'storeAbout']);
+Route::post('/delete-liabout/{id}', [BackController::class, 'destroyAbout']);
 
 Route::get('/back/cardarticle', [BackController::class, 'cardArticle']);
 Route::post('/back-Store-card', [BackController::class, 'storeCard']);
+Route::post('/delete-card/{id}', [BackController::class, 'destroyCard']);
