@@ -93,6 +93,11 @@ class BackController extends Controller
         return redirect()->back();
     }
 
+    public function show($id) {
+        $show = Article::find($id);
+        return view('backoffice/pages/show', compact('show'));
+    }
+
     public function destroyCard($id) {
         $destroy = Article::find($id);
         $destroy->delete();

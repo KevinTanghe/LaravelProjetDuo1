@@ -37,3 +37,4 @@ Route::post('/delete-liabout/{id}', [BackController::class, 'destroyAbout']);
 Route::get('/back/cardarticle', [BackController::class, 'cardArticle']);
 Route::post('/back-Store-card', [BackController::class, 'storeCard']);
 Route::post('/delete-card/{id}', [BackController::class, 'destroyCard']);
+Route::get('/card-show/{id}',[BackController::class, 'show']);

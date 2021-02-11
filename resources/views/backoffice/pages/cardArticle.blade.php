@@ -6,11 +6,7 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Titre</th>
-                <th scope="col">Chiffre</th>
-                <th scope="col">SousTitre</th>
-                <th scope="col">Content</th>
-                <th scope="col">Create_at</th>
-                <th scope="col">Update_at</th>
+                <th scope="col"></th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -19,17 +15,13 @@
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
                     <td>{{ $item->titre }}</td>
-                    <td>{{ $item->chiffre }}</td>
-                    <td>{{ $item->sousTitre }}</td>
-                    <td>{{ $item->content }}</td>
-                    <td>{{ $item->created_at }}</td>
-                    <td>{{ $item->updated_at }}</td>
                     <td>
                         <form action="/delete-card/{{$item->id}}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger">DELETE</button>
                         </form>
                     </td>
+                    <td><a class="btn btn-success" href="/card-show/{{$item->id}}">Show</a></td>
                 </tr>
             @endforeach
         </tbody>
