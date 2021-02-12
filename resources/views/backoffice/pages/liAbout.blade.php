@@ -9,6 +9,7 @@
                 <th scope="col">Create_at</th>
                 <th scope="col">Update_at</th>
                 <th scope="col"></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
                     <td>{{ $item->liAbout }}</td>
                     <td>{{ $item->created_at }}</td>
                     <td>{{ $item->updated_at }}</td>
+                    <td><a href="/edit-liabout/{{$item->id}}" class="btn btn-success">Edit</a></td>
                     <td>
                         <form action="/delete-liabout/{{$item->id}}" method="POST">
                             @csrf

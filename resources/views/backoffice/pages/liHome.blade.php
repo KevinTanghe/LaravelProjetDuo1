@@ -3,12 +3,13 @@
     <h1>Home</h1>
     <table class="table">
         <thead>
-            <tr>
+            <tr class="">
                 <th scope="col">Id</th>
                 <th scope="col">Titre</th>
                 <th scope="col">Create_at</th>
                 <th scope="col">Update_at</th>
                 <th scope="col"></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -18,6 +19,7 @@
                     <td>{{ $item->titre }}</td>
                     <td>{{ $item->created_at }}</td>
                     <td>{{ $item->updated_at }}</td>
+                    <td><a href="/edit-liHome/{{$item->id}}" class="btn btn-success">Edit</a></td>
                     <td>
                         <form action="/delete-lihome/{{$item->id}}" method="POST">
                             @csrf

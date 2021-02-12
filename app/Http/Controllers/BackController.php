@@ -35,6 +35,19 @@ class BackController extends Controller
         return redirect()->back();
     }
 
+    public function editReseau($id) {
+        $edit = liensFooter::find($id);
+
+        return view('backoffice/pages/editPages/editReseau', compact('edit'));
+    }
+    
+    public function updateReseau(Request $request, $id) {
+        $update = liensFooter::find($id);
+        $update->Reseaux = $request->Reseaux;
+        $update->save();
+        return redirect('/back/reseau');
+    }
+
     public function liHome() {
 
         $secondHome = SecondHome::all();
@@ -53,6 +66,19 @@ class BackController extends Controller
         $destroy = SecondHome::find($id);
         $destroy->delete();
         return redirect()->back();
+    }
+
+    public function editHome($id) {
+        $edit = SecondHome::find($id);
+
+        return view('backoffice/pages/editPages/editLiHome', compact('edit'));
+    }
+
+    public function updateHome(Request $request, $id) {
+        $update = SecondHome::find($id);
+        $update->titre = $request->titre;
+        $update->save();
+        return redirect('/back/lihome');
     }
 
     public function liAbout() {
@@ -74,6 +100,19 @@ class BackController extends Controller
         $destroy = SecondAbout::find($id);
         $destroy->delete();
         return redirect()->back();
+    }
+
+    public function editAbout($id) {
+        $edit = SecondAbout::find($id);
+
+        return view('backoffice/pages/editPages/editLiAbout', compact('edit'));
+    }
+
+    public function updateAbout(Request $request, $id) {
+        $update = SecondAbout::find($id);
+        $update->liAbout = $request->titre;
+        $update->save();
+        return redirect('/back/liabout');
     }
 
     public function cardArticle() {
@@ -102,5 +141,21 @@ class BackController extends Controller
         $destroy = Article::find($id);
         $destroy->delete();
         return redirect()->back();
+    }
+
+    public function editCard($id) {
+        $edit = Article::find($id);
+
+        return view('/backoffice/pages/editPages/editCard', compact('edit'));
+    }
+
+    public function updateCard(Request $request, $id) {
+        $update = Article::find($id);
+        $update->titre = $request->titre;
+        $update->chiffre = $request->chiffre;
+        $update->sousTitre = $request->sousTitre;
+        $update->content = $request->content;
+        $update->save();
+        return redirect('/back/cardarticle');
     }
 }

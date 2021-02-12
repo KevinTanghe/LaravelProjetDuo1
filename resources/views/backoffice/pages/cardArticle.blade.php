@@ -15,13 +15,13 @@
                 <tr>
                     <th scope="row">{{ $item->id }}</th>
                     <td>{{ $item->titre }}</td>
+                    <td><a class="btn btn-primary" href="/card-show/{{$item->id}}">Show</a></td>
                     <td>
                         <form action="/delete-card/{{$item->id}}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger">DELETE</button>
                         </form>
                     </td>
-                    <td><a class="btn btn-success" href="/card-show/{{$item->id}}">Show</a></td>
                 </tr>
             @endforeach
         </tbody>

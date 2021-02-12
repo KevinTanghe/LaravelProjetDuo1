@@ -11,6 +11,7 @@
             <th scope="col">Content</th>
             <th scope="col">Create_at</th>
             <th scope="col">Update_at</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -22,6 +23,7 @@
                 <td>{{ $show->content }}</td>
                 <td>{{ $show->created_at }}</td>
                 <td>{{ $show->updated_at }}</td>
+                <td><a href="/edit-card/{{$show->id}}" class="btn btn-success">Edit</a></td>
             </tr>
     </tbody>
 </table>
